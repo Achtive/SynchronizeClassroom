@@ -1,0 +1,10 @@
+{
+    "name": "app_content_favorite_list",
+    "viewUrl": "aps/content/favorite/template.html",
+    "controllerUrl": "aps/content/favorite/controller.js",
+    "config": 
+    {
+            "findWeiKeURL":"json/Open_queryForList_findFavoriteWeike.json",
+            "deleteURL":"json/Open_delete_favoriteDelete.json"
+	}
+}

@@ -1,0 +1,75 @@
+<nav class="navbar navbar-default " style="margin-bottom: 0px;background-color:#2A9E7F;color:#fff">
+  <div class="container">
+    <div class="input-group" style="margin-top: 8px;text-align: center;">
+	  <span style="text-align: center;font-size:20px;">收藏夹</span>
+	</div>
+  </div>  
+</nav>
+
+<table class="table table-hover tableListModel">
+      <tbody ng-switch on="page.current_num">
+      	<tr ng-switch-when="0" align="center">
+      		<td colspan="100" class="NoSelectHistory">查询无记录</td>
+      	</tr>
+        <tr width="100%" ng-repeat='row in weikeList'>
+          <td style="padding:15px;padding-left: 10px;width:70%">
+			 <table>
+			   <tr>
+			 		<td valign="middle">章节：{{row.SECTION_NAME }}</td>
+			 	</tr>
+			   <tr>
+			 		<td valign="middle" style="color: blue;" >主题：{{row.THEME_NAME }}</td>
+			 	</tr>
+			 	<!-- 
+			 	<tr>
+			 		<td rowspan="3"><img  class="img-thumbnail" ng-src="{{row.IDENTIFIER}}" style="height:90px;"></td>
+			 		<td valign="middle"><a href="" ng-click="viewclick(row.RES_ATTR_PK)"><h5>{{row.TITLE}}</h5></a></td>
+			 	</tr>
+			 	 -->
+			 	
+			 	<tr>
+			 		<td valign="middle" style="color: blue;">主讲教师：{{row.TEACHER_NAME }}</td>
+			 	</tr>
+			 	
+			 	<tr>
+			 		<td valign="middle" style="color: #888;">
+			 		收藏时间：{{row.FAVORITE_TIME }}   
+			 		</td>
+			 	</tr>
+			 	 <tr>
+			 		<td valign="top">
+			 		    浏览人数&nbsp;<span style="color: #8a6d3b;font-weight: bold;">{{row.SEENUM }}</span>&nbsp;&nbsp;
+			 		    收藏人数&nbsp;<span style="color: #8a6d3b;font-weight: bold;">{{row.SCNUM }}</span>
+			 		</td>
+			 	</tr>
+			 </table>
+          </td>
+          
+          <td style="padding:15px;width:30%">
+          	<table style="border-left: 1px solid #ddd;height:40px;margin-top: 25px;" >
+			 	<tr>
+			 		<td valign="top" style="padding-left: 20px;"><button type="button" class="btn btn-success btn-sm" ng-click="studyClick(row.STUDY_WEIKE_PK);">学习</button></td>
+			 	</tr>
+			 	<tr>
+			 	   <td>&nbsp;</td>
+			 	</tr>
+			 	<tr>
+			 		<td valign="top" style="padding-left: 20px;"><button type="button" class="btn btn-default btn-sm" ng-click="deleteFavoriteClick(row.STUDY_STUDENT_FAVORITE_PK);">删除</button></td>
+			 	</tr>
+			 </table>
+			 
+          </td>
+        </tr>
+       
+      </tbody>
+      <tfoot>
+      	<tr>
+      		<td colspan="100">
+      		 <div ng-include="'html/page.html'"></div>
+			</td>
+      	</tr>
+      </tfoot>
+    </table>
+
+<hr style="margin: 0px;margin-top: 5px;margin-bottom: -5px;" />
+<br/><br/>
